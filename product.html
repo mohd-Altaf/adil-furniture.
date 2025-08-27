@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - Furniture Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+        <nav>
+            <h1> Adil-Furniture</h1>     
+            <ul>
+                <li><a href="index.html">Home 🏠︎</a></li>
+                <li><a href="about.html">About <b>ⓘ</b></li>
+                <li><a href="product.html">Shop 🛒</a></li>
+                <li><a href="cart.html">Cart 🧾</a></li>
+                <li><a href="contact.html">contact ✆</a></li>
+            </ul>
+        </nav>
+    </header>
+
+  <section class="products">
+    <h2>Our Products</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="images/chair.jpg" alt="Chair">
+        <h3>Wooden Chair</h3>
+        <p>₹1500</p>
+        <button onclick="addToCart('Wooden Chair',1500)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="images/sofa.jpg" alt="Sofa">
+        <h3>Comfort Sofa</h3>
+        <p>₹7500</p>
+        <button onclick="addToCart('Comfort Sofa',7500)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="images/table.jpg" alt="Table">
+        <h3>Dining Table</h3>
+        <p>₹5000</p>
+        <button onclick="addToCart('Dining Table',5000)">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+h1{
+  color:white;
+  font-weight: 800;
+}
+header {
+  background: #333;
+  color: white;
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;  /* allows wrapping on small screens */
+}
+
+nav h1 {
+  font-size: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #f8d210; /* highlight */
+}
+
+/* 🔹 Hamburger button */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* 🔹 Mobile styles */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;               /* hide menu by default */
+    flex-direction: column;
+    width: 100%;
+    background: #444;
+    padding: 10px;
+  }
+
+  nav ul.show {
+    display: flex;               /* show when active */
+  }
+
+  .menu-toggle {
+    display: block;              /* show hamburger */
+  }
+}
+
+.hero {
+  text-align: center;
+  padding: 50px;
+  background: #f4f4f4;
+}
+
+.btn {
+  background: #333;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.products {
+  padding: 20px;
+}
+
+.product-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.product {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+}
+.sale-banner {
+  background: #27ae60;      /* Green background */
+  color: white;
+  font-weight: bold;
+  padding: 5px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.sale-banner p {
+  display: inline-block;
+  padding-left: 100%; /* Start outside */
+  animation: scroll 15s linear infinite;
+}
+
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+/* 🔹 Responsive adjustments */
+@media (max-width: 768px) {
+  .sale-banner {
+    font-size: 14px;            /* Slightly smaller text */
+    padding: 8px 0;
+  }
+  .sale-banner p {
+    animation: scroll 20s linear infinite; /* slower on small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .sale-banner {
+    font-size: 12px;            /* Even smaller for mobile */
+    padding: 6px 0;
+  }
+  .sale-banner p {
+    animation: scroll 25s linear infinite; /* even slower */
+  }
+}
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #333;
+  color: white;
+}
+a.wc-msl-whatsapp-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #25D366;  /* WhatsApp green */
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 20px auto;
+}
+
+a.wc-msl-whatsapp-button:hover {
+  background: #1ebe5d;
+  transition: 0.3s;
+}
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* spacing between items */
+}
+
+.hero img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Headings and text */
+.hero h2 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #444;
+}
+
+/* Shop Now Button */
+.hero .btn {
+  display: inline-block;
+  background: #ff6f00;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.hero .btn:hover {
+  background: #e65c00;
+}
+
+/* WhatsApp Button */
+a.wc-msl-whatsapp-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #25D366;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+a.wc-msl-whatsapp-button:hover {
+  background: #1ebe5d;
+  transition: 0.3s;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero .btn,
+  a.wc-msl-whatsapp-button {
+    width: 80%;    /* full width on small screens */
+    font-size: 1rem;
+    padding: 14px;
+  }
+}
+
+.contact-info {
+  background: #1a1a1a;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 420px;
+  margin: 20px auto;                /* center on page */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  transition: transform 0.3s ease;
+}
+
+.contact-info:hover {
+  transform: scale(1.02);
+}
+
+.contact-info h3 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #f8d210;
+  border-bottom: 2px solid #f8d210;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.contact-info p {
+  margin: 10px 0;
+  font-size: 15px;
+  display: flex;               /* align icon + text */
+  align-items: center;
+  flex-wrap: wrap;             /* wrap long text on small screens */
+}
+
+.contact-info i {
+  color: #f8d210;
+  margin-right: 8px;
+  min-width: 20px;             /* keeps icons aligned */
+}
+
+/* 🔹 Responsive adjustments */
+@media (max-width: 600px) {
+  .contact-info {
+    max-width: 95%;            /* take more space on mobile */
+    padding: 15px;
+  }
+
+  .contact-info h3 {
+    font-size: 18px;
+  }
+
+  .contact-info p {
+    font-size: 14px;
+  }
+}
