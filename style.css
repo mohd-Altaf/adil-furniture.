@@ -7,64 +7,77 @@ h1{
   color:white;
   font-weight: 800;
 }
-header {
-  background: #333;
-  color: white;
-  padding: 10px;
-}
+ body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;  /* allows wrapping on small screens */
-}
+    header {
+      background: #333;
+      color: white;
+      padding: 10px;
+    }
 
-nav h1 {
-  font-size: 20px;
-}
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 15px;
-}
+    nav h1 {
+      font-size: 22px;
+      margin: 0;
+    }
 
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s;
-}
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+      transition: max-height 0.4s ease-in-out;
+      overflow: hidden;
+    }
 
-nav ul li a:hover {
-  color: #f8d210; /* highlight */
-}
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: background 0.3s, color 0.3s;
+    }
 
-/* 🔹 Hamburger button */
-.menu-toggle {
-  display: none;
-  font-size: 24px;
-  cursor: pointer;
-}
+    nav ul li a:hover {
+      background: #f8d210;
+      color: black;
+    }
 
-/* 🔹 Mobile styles */
-@media (max-width: 768px) {
-  nav ul {
-    display: none;               /* hide menu by default */
-    flex-direction: column;
-    width: 100%;
-    background: #444;
-    padding: 10px;
-  }
+    /* 🔹 Hamburger button */
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      user-select: none;
+    }
 
-  nav ul.show {
-    display: flex;               /* show when active */
-  }
+    /* 🔹 Mobile styles */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        background: #444;
+        max-height: 0; /* hidden by default */
+      }
 
-  .menu-toggle {
-    display: block;              /* show hamburger */
-  }
-}
+      nav ul.show {
+        max-height: 500px; /* expands */
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
 
 .hero {
   text-align: center;
