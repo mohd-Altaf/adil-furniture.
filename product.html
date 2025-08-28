@@ -387,6 +387,24 @@
   </section>
 
   <script src="script.js"></script>
+  
+  <script>
+ function sendWhatsApp(element) {
+  let product = element.closest(".product"); // get parent div
+  let img = product.querySelector("img").src;
+  let name = product.querySelector("h3").innerText;
+  let price = product.querySelector("p").innerText;
+
+  let message = `Hello, I am interested in this product:%0A
+  *${name}*%0A
+  Price: ${price}%0A
+  Image: ${img}`;
+
+  let phone = "919959334110"; // Your WhatsApp number
+  let url = `https://wa.me/${phone}?text=${message}`;
+  window.open(url, "_blank");
+}
+</script>
 </body>
 
 </html>
