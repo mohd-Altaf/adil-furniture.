@@ -6,52 +6,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adil-Furniture Shop</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
     <header>
-    <nav>
-      <h1>Adil-Furniture</h1>
-      <span class="menu-toggle">☰</span>
-      <ul>
-        <li><a href="index.html">Home 🏠︎</a></li>
-        <li><a href="about.html">About ⓘ</a></li>
-        <li><a href="product.html">Shop 🛒</a></li>
-        <li><a href="cart.html">Cart 🧾</a></li>
-        <li><a href="contact.html">Contact ✆</a></li>
-      </ul>
-    </nav>
-  </header>
+        <nav>
+            <h1>Adil-Furniture</h1>
+            <button class="menu-toggle">☰</button>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="product.html"><i class="fas fa-shopping-cart"></i> Shop</a></li>
+                <li><a href="cart.html"><i class="fas fa-receipt"></i> Cart</a></li>
+                <li><a href="contact.html"><i class="fas fa-phone"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-
-    <!-- Hero Section -->
-    <section class="hero">
+    <main>
+        <!-- Sale Banner -->
         <div class="sale-banner">
             <p>Mega Sale: Flat 50% OFF on tables | Chairs Starting at ₹999 | Free Delivery on Orders Above ₹5000</p>
         </div>
 
-        <h2>Beautiful Furniture for Your Home</h2>
-        <p>Shop our collection of chairs, tables, and sofas.</p>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Beautiful Furniture for Your Home</h2>
+                <p>Discover our premium collection of chairs, tables, and sofas designed for comfort and style.</p>
+                
+                <img src="./images/image-logo.png" alt="Adil Furniture Showroom" height="300">
+                
+                <div class="hero-actions">
+                    <a href="product.html" class="btn">Explore Collection</a>
+                    <a href="https://wa.me/919959334110?text=Hello%20I%20am%20interested%20in%20your%20furniture" 
+                       target="_blank" class="btn whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Enquiry
+                    </a>
+                </div>
+            </div>
+        </section>
 
-        <img src="./images/image-logo.png" alt="a logo image" height="500px">
-
-        <a href="product.html" class="btn">Shop Now</a>
-
-        <a href="https://wa.me/919959334110?text=Hello%20I%20am%20interested%20in%20your%20furniture" target="_blank"
-            rel="noopener noreferrer" class="wc-msl-whatsapp-button">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967..."></path>
-            </svg>✆ WhatsApp Enquiry
-        </a>
-    </section>
-          
-
+        <!-- Featured Categories -->
+        <section class="products">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="product-grid">
+                <div class="product">
+                    <img src="./images/chair_1.jpg" alt="Chairs" class="product-img">
+                    <div class="product-content">
+                        <h3>Chairs</h3>
+                        <p>Comfortable and stylish chairs for every room</p>
+                        <a href="product.html" class="btn">View Collection</a>
+                    </div>
+                </div>
+                
+                <div class="product">
+                    <img src="./images/chair_1.jpg" alt="Tables" class="product-img">
+                    <div class="product-content">
+                        <h3>Tables</h3>
+                        <p>Elegant tables for dining, working and more</p>
+                        <a href="product.html" class="btn">View Collection</a>
+                    </div>
+                </div>
+                
+                <div class="product">
+                    <img src="./images/chair_1.jpg" alt="Sofas" class="product-img">
+                    <div class="product-content">
+                        <h3>Sofas</h3>
+                        <p>Luxurious sofas for your living room</p>
+                        <a href="product.html" class="btn">View Collection</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <p>Copyright © 2025 by Adil Furniture. All Rights Reserved | Designed by Altaf</p>
     </footer>
 
-   <script src="script.js"></script>
+    <a href="tel:+919959334110" class="call-btn">
+        <i class="fas fa-phone"></i>
+    </a>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

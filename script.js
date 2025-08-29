@@ -1,40 +1,56 @@
+// Mobile menu toggle
 const toggle = document.querySelector(".menu-toggle");
-    const menu = document.querySelector("nav ul");
+const menu = document.querySelector("nav ul");
 
-    toggle.addEventListener("click", () => {
-      menu.classList.toggle("show");
-      toggle.textContent = menu.classList.contains("show") ? "✖" : "☰";
-    });
+toggle.addEventListener("click", () => {
+    menu.classList.toggle("show");
+    toggle.textContent = menu.classList.contains("show") ? "✖" : "☰";
+});
 
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('nav') && menu.classList.contains('show')) {
+        menu.classList.remove('show');
+        toggle.textContent = "☰";
+    }
+});
 
-//     function sendWhatsAppMessage(event, phone, img, name, price) {
-//     event.preventDefault();
-//     const message = `Hello, I am interested in this product:%0A
-// *${name}*%0A
-// Price: ${price}%0A
-// Image: ${window.location.origin}/${img}`;
+// WhatsApp function
+function sendWhatsApp(button) {
+    const phone = "919959334110";
+    const product = button.closest(".product");
     
-//     const url = `https://wa.me/${phone}?text=${message}`;
-//     window.open(url, '_blank');
-//   }
- 
-
-
-  function sendWhatsApp(button) {
-  // WhatsApp number (without + or spaces)
-  const phone = "919959334110"; 
-
-  // Find product details
-  const product = button.closest(".product");
-  const img = product.querySelector("img").src;
-  const name = product.querySelector("h3").innerText;
-  const price = product.querySelector("p").innerText;
-
-  // Encode message for WhatsApp
-  const message = encodeURIComponent(
-    `Hello, I am interested in this furniture:\n\n*Product:* ${name}\n*Price:* ${price}\n*Image:* ${img}`
-  );
-
-  // Open WhatsApp
-  window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
+    if (product) {
+        const img = product.querySelector("img").src;
+        const name = product.querySelector("h3").innerText;
+        const price = product.querySelector(".product-price").innerText;
+        const message = encodeURIComponent(
+            `Hello, I am interested in this furniture:\n\n*Product:* ${name}\n*Price:* ${price}\n*Image:* ${img}`
+        );
+        window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
+    } else {
+        const message = encodeURIComponent("Hello, I'm interested in your furniture products. Can you please send me more information?");
+        window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
+    }
 }
+
+// Add to cart functionality (for future implementation)
+function addToCart(productId, productName, productPrice, productImage) {
+    // This would be implemented when you add cart functionality
+    console.log(`Added to cart: ${productName}`);
+    alert(`${productName} has been added to your cart!`);
+}
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
