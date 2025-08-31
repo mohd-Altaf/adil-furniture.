@@ -7,6 +7,94 @@
     <title>Adil-Furniture Shop</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>  /* WhatsApp Form */
+        .whatsapp-form-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .whatsapp-form-container h3 {
+            color: #25D366;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .whatsapp-form-container p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .form-group select,
+        .form-group input {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group select:focus,
+        .form-group input:focus {
+            border-color: #25D366;
+            outline: none;
+        }
+
+        .submit-btn {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #128C7E;
+        }
+
+        .whatsapp-info {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .phone-number {
+            font-weight: bold;
+            color: #25D366;
+        }
+
+</style>
 </head>
 
 <body>
@@ -17,7 +105,7 @@
             <ul>
                 <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
-                <li><a href="product.html"><i class="fas fa-shopping-cart"></i> Shop</a></li>
+                <li><a href="product.html"><i class="fas fa-shopping-cart"></i> Services</a></li>
                 <li><a href="cart.html"><i class="fas fa-receipt"></i> Cart</a></li>
                 <li><a href="contact.html"><i class="fas fa-phone"></i> Contact</a></li>
             </ul>
@@ -79,6 +167,54 @@
                     </div>
                 </div>
             </div>
+
+         <!-- WhatsApp Form Section -->
+    <section class="products" id="whatsapp-form">
+        <h2 class="section-title">WhatsApp Enquiry</h2>
+        <div class="whatsapp-form-container">
+            <h3><i class="fab fa-whatsapp"></i> Send Us a Query</h3>
+            <p>Fill out the form below and we'll get back to you on WhatsApp</p>
+
+            <form id="whatsappForm">
+                <div class="form-group">
+                    <label for="queryType">Query Type</label>
+                    <select id="queryType" required>
+                        <option value="" disabled selected>Select your query type</option>
+                        <option value="General Information">General Information</option>
+                        <option value="Product Support">Product Support</option>
+                        <option value="Billing Question">Billing Question</option>
+                        <option value="Technical Issue">Technical Issue</option>
+                        <option value="Partnership">Partnership</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="phoneNumber">Your Phone Number</label>
+                    <input type="number" id="phoneNumber" placeholder="Enter your phone number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="productInterest">Product of Interest (Optional)</label>
+                    <select id="productInterest">
+                        <option value="" selected>Select a product</option>
+                        <option value="Wooden Chair">Wooden Chair</option>
+                        <option value="Dining Table">Dining Table</option>
+                        <option value="Sofa Set">Sofa Set</option>
+                        <option value="Bookshelf">Bookshelf</option>
+                        <option value="Other">Other Furniture</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-btn"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
+            </form>
+
+            <div class="whatsapp-info">
+                <p>Your query will be sent to WhatsApp number: <span class="phone-number">+91 9948038730</span></p>
+            </div>
+        </div>
+    </section>
+
         </section>
     </main>
 
@@ -91,6 +227,29 @@
     </a>
 
     <script src="script.js"></script>
+
+        <script>
+    // WhatsApp form submission
+    document.getElementById('whatsappForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const queryType = document.getElementById('queryType').value;
+        const phoneNumber = document.getElementById('phoneNumber').value;
+        const productInterest = document.getElementById('productInterest').value;
+
+        if (!queryType || !phoneNumber) {
+            alert('Please fill out all required fields');
+            return;
+        }
+
+        // Example redirect to WhatsApp
+        const message = `Hello, I have a query regarding: ${queryType}. My number: ${phoneNumber}. Product: ${productInterest}`;
+        const whatsappURL = `https://wa.me/919948038730?text=${encodeURIComponent(message)}`;
+        window.open(whatsappURL, "_blank");
+    });
+</script>
+
+            
 </body>
 
 </html>
