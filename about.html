@@ -4,35 +4,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Adil Furniture Shop</title>
+    <title>About Us - Adil Furnitures Shop</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>/* Zoom Modal Styles */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+#caption {
+  margin: 15px auto;
+  text-align: center;
+  color: #f1f1f1;
+  font-size: 18px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #bbb;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 10px;
+}
+
+.tabs button {
+  background: #46678a;       /* Primary blue */
+  color: white;              /* White text */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tabs button:hover {
+  background: #1a3653;       /* Darker blue on hover */
+  transform: scale(1.05);    /* Slight zoom */
+}
+
+.tabs button:active {
+  background: #004080;       /* Even darker when clicked */
+  transform: scale(0.98);
+}
+
+.tabs button.active {
+  background: #3eab59;       /* Highlight active tab (green) */
+  color: #fff;
+}
+
+</style>
 </head>
+
+<!-- Image Zoom Modal -->
+<div id="imgModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="zoomedImg">
+  <div id="caption"></div>
+</div>
+
 
 <body>
     <header>
         <nav>
-            <h1>Adil-Furniture</h1>
+            <h1>Adil-Furnitures</h1>
             <button class="menu-toggle">☰</button>
             <ul>
                 <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
                 <li><a href="product.html"><i class="fas fa-shopping-cart"></i> Services</a></li>
-                <li><a href="cart.html"><i class="fas fa-receipt"></i> Cart</a></li>
+                <li><a href="gallery.html"><i class="fas fa-receipt"></i> gallery</a></li>
                 <li><a href="contact.html"><i class="fas fa-phone"></i> Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h2 class="section-title">About Adil Furniture</h2>
-        
+        <h2 class="section-title">Office Chair Repair & Servicing in Hyderabad & Telangana</h2>
+
         <div class="about-content" style="max-width: 800px; margin: 0 auto 2rem; padding: 0 1rem;">
             <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">
-                For over a decade, Adil Furniture has been providing high-quality, affordable furniture to homes across India. 
-                We take pride in our craftsmanship and commitment to customer satisfaction.
+                At Adil Furniture, we specialize in professional office chair repairing services in Hyderabad and
+                Telangana. Whether you have a revolving chair, computer chair, ergonomic mesh chair, or leather
+                executive chair, our expert technicians provide reliable repair, cleaning, and maintenance solutions.</p>
+<p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">
+                Regular servicing and deep cleaning not only improve comfort and performance but also extend the life of
+                your old chairs by 1–2 years, saving you the cost of frequent replacements. From fixing wheels,
+                hydraulics, and armrests to fabric and leather restoration, we ensure your office chairs remain in
+                optimum working condition for longer.
+<p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">
+                Choose Adil Furniture’s chair repair services to keep your workspace comfortable, cost-effective, and
+                professional.
             </p>
-            
+
             <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
                 <h3 style="color: #3a3845; margin-bottom: 1rem;">Why Choose Us?</h3>
                 <ul style="list-style-type: none;">
@@ -56,40 +152,36 @@
             </div>
         </div>
 
-        <h3 class="section-title">Our Gallery</h3>
-        
-        <section class="gallery">
-            <img
-                alt="An ash IKORNNES standing mirror has a sweater hanging on its attached back rail, facing a window in an airy, pink bedroom."
-                src="https://www.ikea.com/ext/ingkadam/m/f95b5fd1e2b3b4/original/PH157405-crop002.jpg"
-                loading="lazy">
+        <h3 class="section-title" id="gll">Our Collection</h3>
 
-            <img
-                alt="A living room with a black HEMNES bookcase holding books and other objects. A rattan armchair is in front with two cushions."
-                src="https://www.ikea.com/ext/ingkadam/m/37d7693d6f3c6e14/original/PH168786-crop001.jpg"
-                loading="lazy">
+       <div id="chairs" class="tab-content">
+  <section class="gallery">
+           <img alt="chair_21" src="./images/gallery/chair_21.avif" loading="lazy">
+<img alt="chair_22" src="./images/gallery/chair_22.avif" loading="lazy">
+<img alt="chair_23" src="./images/gallery/chair_23.avif" loading="lazy">
+<img alt="chair_24" src="./images/gallery/chair_24.jpg" loading="lazy">
+<img alt="chair_25" src="./images/gallery/chair_25.avif" loading="lazy">
+<img alt="chair_26" src="./images/gallery/chair_26.jpg" loading="lazy">
+<img alt="chair_27" src="./images/gallery/chair_27.avif" loading="lazy">
+<img alt="chair_28" src="./images/gallery/chair_28.jpg" loading="lazy">
+<img alt="chair_29" src="./images/gallery/chair_29.jpg" loading="lazy">
+<img alt="chair_30" src="./images/gallery/chair_30.avif" loading="lazy">
+<img alt="chair_31" src="./images/gallery/chair_31.avif" loading="lazy">
+<img alt="chair_32" src="./images/gallery/chair_32.avif" loading="lazy">
+<img alt="chair_33" src="./images/gallery/chair_33.avif" loading="lazy">
+<img alt="chair_34" src="./images/gallery/chair_34.avif" loading="lazy">
+<img alt="chair_35" src="./images/gallery/chair_35.jpg" loading="lazy">
 
-            <img
-                alt="Children's bedroom with loft bed frame, rug, drawer unit, cabinet with door, basket, child's stool, bed frame with underbed."
-                src="https://www.ikea.com/ext/ingkadam/m/1cc2c7a04557820c/original/PH168766-crop002.jpg"
-                loading="lazy">
-
-            <img
-                alt="A white MICKE desk sits between a matching drawer unit and room-divider, cubby-style storage. Two chairs are under the desk."
-                src="https://www.ikea.com/ext/ingkadam/m/830138192d03f46/original/PH165490-crop001.jpg"
-                loading="lazy">
-
-            <img
-                alt="Modern living room setup with comfortable sofas and elegant coffee table"
-                src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-                loading="lazy">
-
-            <img
-                alt="Elegant dining table with comfortable chairs"
-                src="https://images.unsplash.com/photo-1556020685-ae41abfc9365?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-                loading="lazy">
         </section>
+</div>
     </main>
+
+   <div class="tabs">
+  <a href="gallery.html">
+    <button>Move to Gallery</button>
+  </a>
+</div>
+
 
     <footer>
         <p>Copyright © 2025 by Adil Furniture. All Rights Reserved | Designed by Altaf</p>
@@ -99,7 +191,43 @@
         <i class="fas fa-phone"></i>
     </a>
 
-    <script src="script.js"></script>
-</body>
+    <!-- Zoom Modal (added here) -->
+    <div id="imgModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="zoomedImg">
+      <div id="caption"></div>
+    </div>
 
+    <script src="script.js"></script>
+    
+  <script>
+  // Zoom functionality
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("zoomedImg");
+  const captionText = document.getElementById("caption");
+  const closeBtn = document.getElementsByClassName("close")[0];
+
+  // Open modal when clicking on any gallery image
+  document.querySelectorAll(".gallery img").forEach(img => {
+    img.addEventListener("click", () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+      captionText.innerHTML = img.alt;
+    });
+  });
+
+  // Close when clicking ×
+  closeBtn.onclick = function() {
+    modal.style.display = "none";
+  };
+
+  // Close when clicking outside the image
+  modal.onclick = function(event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
+
+</body>
 </html>

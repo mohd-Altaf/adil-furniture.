@@ -25,7 +25,7 @@ function sendWhatsApp(button) {
         const name = product.querySelector("h3").innerText;
         const price = product.querySelector(".product-price").innerText;
         const message = encodeURIComponent(
-            `Hello, I am interested in this furniture:\n\n*Product:* ${name}\n*Price:* ${price}\n*Image:* ${img}`
+            `Hello, I am interested in this furniture:\n\n*service:* ${name}\n*Image:* ${img}`
         );
         window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
     } else {
